@@ -42,9 +42,9 @@ userSchema.statics.findByEmail = function (email) {
 };
 
 // Virtual property
-// userSchema.virtual("fullname").get(function () {
-//   return `${this.profile.firstName} ${this.profile.lastName}`;
-// });
+userSchema.virtual("fullname").get(function () {
+  return `${this.profile.firstName} ${this.profile.lastName}`;
+});
 
 // Create a model
 const User = mongoose.model("User", userSchema);
